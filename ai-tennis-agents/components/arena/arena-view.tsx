@@ -118,7 +118,7 @@ function SideSelect({
         {color && <span className="size-2.5 rounded-full" style={{ backgroundColor: color }} aria-hidden />}
         {label}
       </span>
-      <Select value={value ?? undefined} onValueChange={(v) => v && onPick(v)}>
+      <Select value={value ?? null} onValueChange={(v) => v && onPick(v)}>
         <SelectTrigger className="w-52">
           <SelectValue placeholder="Select player" />
         </SelectTrigger>

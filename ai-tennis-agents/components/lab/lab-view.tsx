@@ -73,7 +73,7 @@ export function LabView() {
           </div>
 
           <Field label="Base agent">
-            <Select value={base} onValueChange={(v) => v && setBaseId(v)}>
+            <Select value={base ?? null} onValueChange={(v) => v && setBaseId(v)}>
               <SelectTrigger>
                 <SelectValue placeholder="Select base agent" />
               </SelectTrigger>
@@ -130,7 +130,7 @@ export function LabView() {
           </p>
 
           <Field label="Player A">
-            <Select value={qLeft ?? roster[0]?.id} onValueChange={(v) => v && setQLeft(v)}>
+            <Select value={qLeft ?? roster[0]?.id ?? null} onValueChange={(v) => v && setQLeft(v)}>
               <SelectTrigger><SelectValue placeholder="Player A" /></SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -141,7 +141,7 @@ export function LabView() {
           </Field>
 
           <Field label="Player B">
-            <Select value={qRight ?? roster[1]?.id} onValueChange={(v) => v && setQRight(v)}>
+            <Select value={qRight ?? roster[1]?.id ?? null} onValueChange={(v) => v && setQRight(v)}>
               <SelectTrigger><SelectValue placeholder="Player B" /></SelectTrigger>
               <SelectContent>
                 <SelectGroup>
