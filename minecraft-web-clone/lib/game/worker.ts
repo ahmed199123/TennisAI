@@ -45,7 +45,10 @@ ctx.onmessage = (e: MessageEvent<InMsg>) => {
     }
     const opaque = pack(result.opaque)
     const transparent = pack(result.transparent)
-    ctx.postMessage({ type: 'mesh', id: msg.id, opaque, transparent }, transfer as Transferable[])
+    ctx.postMessage(
+      { type: 'mesh', id: msg.id, opaque, transparent, worker: msg.worker },
+      transfer as Transferable[],
+    )
     return
   }
 }
